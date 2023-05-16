@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quiz/quiz_container.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
+class Quiz extends StatefulWidget {
+  const Quiz({super.key});
+  @override
+  State<Quiz> createState() {
+    return _QuizState();
+  }
+}
+
+class _QuizState extends State<Quiz> {
+  @override
+  Widget build(context) {
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
@@ -20,6 +29,6 @@ void main() {
           child: const QuizContainer(),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
