@@ -19,7 +19,7 @@ class StartScreen extends StatelessWidget {
             height: 40,
           ),
           Text(
-            "Learn Flutter the Fun way",
+            "Nomiso Quiz App",
             style: GoogleFonts.lato(
               color: const Color.fromARGB(255, 209, 237, 255),
               fontSize: 24,
