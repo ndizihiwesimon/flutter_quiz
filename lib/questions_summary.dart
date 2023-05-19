@@ -23,7 +23,7 @@ class QuestionsSummary extends StatelessWidget {
                     shape: BoxShape.circle,
                     color: data['correct_answer'] == data['user_answer']
                         ? const Color.fromARGB(255, 93, 182, 250)
-                        : Colors.amberAccent,
+                        : const Color.fromARGB(255, 245, 141, 141),
                   ),
                   child: Text(
                     ((data['question_id'] as int) + 1).toString(),
@@ -47,7 +47,7 @@ class QuestionsSummary extends StatelessWidget {
                       Text(
                         data['correct_answer'] as String,
                         style: GoogleFonts.lato(
-                          color: const Color.fromARGB(255, 245, 141, 141),
+                          color: Colors.amberAccent,
                           fontSize: 14,
                         ),
                       ),
