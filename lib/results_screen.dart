@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quiz/data/questions.dart';
 import 'package:flutter_quiz/questions_summary.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key, required this.chosenAnswers});
@@ -22,9 +23,9 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final numTotalQuestions = questions.length;
-    final numCorrectAnswers = summaryData.where((data) {
-      return data['correct_answer'] == data['user_answer'];
-    }).length;
+    final numCorrectAnswers = summaryData
+        .where((data) => data['correct_answer'] == data['user_answer'])
+        .length;
 
     return SizedBox(
       width: double.infinity,
@@ -35,19 +36,16 @@ class ResultScreen extends StatelessWidget {
           children: [
             Text(
               'You answered $numCorrectAnswers  out of $numTotalQuestions questions correctly!',
-              style: const TextStyle(
-                  color: Color.fromARGB(255, 242, 241, 241),
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
+              style: GoogleFonts.lato(
+                color: const Color.fromARGB(255, 209, 237, 255),
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 30),
             QuestionsSummary(summaryData: summaryData),
-            const SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 10),
             TextButton(onPressed: () {}, child: const Text('Restart Quiz'))
           ],
         ),
